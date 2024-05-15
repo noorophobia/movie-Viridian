@@ -1,10 +1,4 @@
- /// WHOLE CODE CHANGED FOR CREATE MOVIE 
-//It seems like the issue might be related to how you are constructing the request in your query function
-//Use fetch to make the HTTP request to the endpoint.
-//Ensure to set the correct Content-Type header to application/json.
-//Convert the newMovie object to a JSON string using JSON.stringify() before sending it in the request body.
-//Handle errors appropriately by checking the response status and throwing an error if the request fails.
-//Parse the response body using response.json() to get the data returned by the server.'
+
 import { apiSlice } from "./apiSlice";
 import { MOVIE_URL, UPLOAD_URL } from "../constants";
 

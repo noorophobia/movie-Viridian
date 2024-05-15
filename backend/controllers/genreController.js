@@ -36,7 +36,7 @@ const updateGenre = asyncHandler(async (req, res) => {
 
     genre.name = name;
 
-    const updatedGenre = await genre.save();
+    const updatedGenre = await genre.save(); //mongodb saves
     res.json(updatedGenre);
   } catch (error) {
     console.error(error);

@@ -42,13 +42,13 @@ const CreateMovie = () => {
       }));
       console.log(genres[0]?._id);
     }
-  }, [genres]);
+  }, [genres]); // if [genre] changes then set genre in setMovieData
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "year") {
-      const yearValue = parseInt(value, 10);
+      const yearValue = parseInt(value, 10); // String to int
       if (yearValue < 1900 || yearValue > 2024 || isNaN(yearValue)) {
         setYearError("Year must be between 1900 and 2024.");
       } else {
@@ -61,6 +61,7 @@ const CreateMovie = () => {
       [name]: value,
     }));
   };
+  //event handlers 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -72,7 +73,7 @@ const CreateMovie = () => {
       console.log("Movie data:", movieData);
       console.log("Selected image:", selectedImage);
 
-      if (
+      if ( // any not selected toast error
         !movieData.name ||
         !movieData.year ||
         !movieData.detail ||
@@ -94,7 +95,7 @@ const CreateMovie = () => {
         const formData = new FormData();
         formData.append("image", selectedImage);
 
-        const uploadImageResponse = await uploadImage(formData);
+        const uploadImageResponse = await uploadImage(formData); // uploadImageMutation
         console.log("Uploaded image path 1: ", uploadedImagePath);
         if (uploadImageResponse.data) {
           uploadedImagePath = uploadImageResponse.data.image;

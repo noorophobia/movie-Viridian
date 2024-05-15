@@ -68,7 +68,7 @@ const MovieTabs = ({ userInfo, submitHandler, comment, setComment, movie }) => {
             <div
               key={review._id}
               className=" p-4 rounded-lg review-container"
-              style={{ width: '80%', marginTop: '-10rem' }}
+              style={{ width: '80%', marginTop: '10rem' }}
             >
                   <div className="d-flex justify-content-between">
                     <strong className="text"  style={{ fontWeight:'bold', fontSize:'1.2rem' }}>{review.name}</strong>
